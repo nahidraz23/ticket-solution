@@ -110,7 +110,7 @@
         <!-- Best offer section -->
         <section
             class="container mx-auto lg:mt-36 flex flex-col lg:space-x-10 p-4 lg:p-0">
-            <div class="flex justify-center">
+            <div class="flex justify-center mt-20">
                 <h1 class="text-4xl font-bold font-raleway">Best offers for you</h1>
             </div>
             
@@ -118,7 +118,7 @@
             <div class="flex flex-col lg:flex-row justify-center gap-6 mt-12">
                 <!-- New user offer -->
                 <div>
-                    <div class="bg-amber-300 rounded-2xl p-11 lg:p-12 flex font-inter relative">
+                    <div class="bg-amber-400 rounded-2xl p-11 lg:p-12 flex font-inter relative">
                         <div class="lg:space-y-2">
                             <h1 class="text-2xl lg:text-4xl font-extrabold">
                                 15% OFF
@@ -133,7 +133,7 @@
                         <div class="absolute -top-0 left-40 lg:-top-2 lg:left-64">
                             <img src="./images/cupon-devider.png" alt="">
                         </div>
-                        <div class="pl-10 pt-5 lg:space-y-2">
+                        <div class="pl-10 pt-5 lg:space-y-2 flex flex-col items-center">
                             <h1 class="text-lg lg:text-4xl font-extrabold">
                                 NEW15
                             </h1>
@@ -159,8 +159,8 @@
                     </div>
                     <div class="absolute -top-1 left-40 lg:-top-2 lg:left-64">
                         <img src="./images/cupon-devider.png" alt="">
-                    </div>
-                    <div class="pl-10 pt-5 lg:space-y-2">
+                    </div> 
+                    <div class="pl-10 pt-5 lg:space-y-2 flex flex-col items-center">
                         <h1 class="text-lg lg:text-4xl font-extrabold font-inter">
                             Couple 20
                         </h1>
@@ -180,7 +180,7 @@
         </section>
 
         <!-- GreenLine Paribahan section -->
-        <section class="bg-gray-200 mt-10 lg:mt-32 rounded-t-[88px] border-2 border-t-green-500 pb-32">
+        <section class="bg-gray-100 mt-10 lg:mt-32 rounded-t-[88px] border-2 border-t-green-500 pb-32">
             <div class="container mx-auto">
                 <div class="font-inter pt-32 flex flex-col items-center space-y-6">
                     <h1 class="text-4xl font-bold">GreenLine Paribahan</h1>
@@ -210,7 +210,7 @@
                         </div>
                     </div>
 
-                    <div class="bg-gray-200 p-8 rounded-2xl mt-8 flex flex-col justify-center">
+                    <div class="bg-gray-100 p-8 rounded-2xl mt-8 flex flex-col justify-center">
                         <div class="flex justify-between">
                             <h3 class="text-lg font-semibold text-gray-400 font-raleway">Route</h3>
                             <p class="text-lg font-semibold font-raleway">Dhaka - Sylhet</p>
@@ -222,9 +222,9 @@
                         </div>
                         <hr class="border-dashed border-gray-400 mt-6">
                         <div class="flex justify-between mt-6">
-                            <button class="btn">Boarding Point - Laxmipur</button>
-                            <button class="btn">Dropping Point - Bogura</button>
-                            <button class="btn">Est. Time - 11 Hour</button>
+                            <button class="btn bg-gray-200">Boarding Point - Laxmipur</button>
+                            <button class="btn bg-gray-200">Dropping Point - Bogura</button>
+                            <button class="btn bg-gray-200">Est. Time - 11 Hour</button>
                         </div>
                     </div>
                 </div>
@@ -380,15 +380,15 @@
                     <hr class="border-dashed mt-6 border-gray-300">
                     <div class="bg-gray-100 p-8 mt-6 rounded-2xl">
                         <div class="flex font-medium font-inter justify-between">
-                            <h1>Seat <span class="bg-green-500 badge text-white">0</span></h1>
+                            <h1>Seat <sup><span class="bg-green-500 badge text-white">0</span></sup></h1>
                             <h1>class</h1>
                             <h1>Price</h1>
                         </div>
                         <hr class="border-dashed mt-6 border-gray-400">
                         <div class="flex font-medium font-inter justify-between mt-6">
-                            <h1>Seat</h1>
-                            <h1>class</h1>
-                            <h1>Price</h1>
+                            <h1></h1>
+                            <h1></h1>
+                            <h1></h1>
                         </div>
                         <hr class="border-gray-500 mt-6">
                         <div class="flex justify-between mt-6">
@@ -468,6 +468,7 @@
     </footer>
 
     <!-- link JS file -->
+    <script src="scripts/utility.js"></script>
     <script src="scripts/srcipt.js"></script>
 </body>
 
