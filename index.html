@@ -179,7 +179,7 @@
         </section>
 
         <!-- GreenLine Paribahan section -->
-        <section class="bg-gray-100 mt-10 lg:mt-32 rounded-t-[88px] border-t-4 border-t-green-500 pb-32">
+        <section class="bg-gray-100 mt-10 lg:mt-32 rounded-t-[88px] border-t-4 border-t-green-500 lg:pb-32">
             <div class="container mx-auto">
                 <div class="font-inter pt-32 flex flex-col items-center space-y-6">
                     <h1 class="text-4xl font-bold">GreenLine Paribahan</h1>
@@ -189,7 +189,7 @@
             </div>
 
             <!-- Ticket info section -->
-            <section id="buy-ticket-section" class="container mx-auto bg-white p-6 rounded-2xl flex mt-12 relative">
+            <section id="buy-ticket-section" class="container mx-auto bg-white p-6 rounded-2xl flex flex-col lg:flex-row mt-12 relative">
                 <div class="flex-1 mr-10">
                     <div class="flex justify-between">
                         <div class="flex gap-4 items-center">
@@ -197,12 +197,12 @@
                                 <img src="./images/bus-logo.png" alt="">
                             </div>
                             <div>
-                                <h1 class="text-3xl font-raleway font-bold">Greenline Paribahan</h1>
-                                <p class="text-lg text-gray-400">Coach-009-WEB ! AC_Business</p>
+                                <h1 class="lg:text-3xl font-raleway font-bold">Greenline Paribahan</h1>
+                                <p class="lg:text-lg text-gray-400">Coach-009-WEB ! AC_Business</p>
                             </div>
                         </div>
-                        <div>
-                            <button class="btn text-green-500 text-lg font-medium bg-green-100 border-none">
+                        <div class="flex">
+                            <button class="btn text-green-500 lg:text-lg font-medium bg-green-100 border-none">
                                 <img src="./images/seat-green.png" alt="">
                                 <span id="available-seats">40</span> Seats left
                             </button>
@@ -210,17 +210,17 @@
                     </div>
 
                     <div class="bg-gray-100 p-8 rounded-2xl mt-8 flex flex-col justify-center">
-                        <div class="flex justify-between">
+                        <div class="flex flex-col lg:flex-row justify-between">
                             <h3 class="text-lg font-semibold text-gray-400 font-raleway">Route</h3>
                             <p class="text-lg font-semibold font-raleway">Dhaka - Sylhet</p>
                         </div>
                         <hr class="border-dashed border-gray-400 mt-6">
-                        <div class="flex justify-between mt-6">
+                        <div class="flex flex-col lg:flex-row justify-between mt-6">
                             <h3 class="text-lg font-semibold text-gray-400 font-raleway">Departure Time</h3>
                             <p class="text-lg font-semibold font-raleway">9.00 PM</p>
                         </div>
                         <hr class="border-dashed border-gray-400 mt-6">
-                        <div class="flex justify-between mt-6">
+                        <div class="flex flex-col lg:flex-row justify-between mt-6">
                             <button class="btn bg-gray-200">Boarding Point - Laxmipur</button>
                             <button class="btn bg-gray-200">Dropping Point - Bogura</button>
                             <button class="btn bg-gray-200">Est. Time - 11 Hour</button>
@@ -228,10 +228,10 @@
                     </div>
                 </div>
                 <!-- Divider -->
-                <div class="absolute top-0 right-52 ">
+                <div class="absolute top-0 right-52 hidden lg:inline">
                     <img src="./images/info-devider.png" alt="">
                 </div>
-                <div class="mx-16 my-32 flex flex-col items-center">
+                <div class="lg:mx-16 lg:my-32 flex flex-col items-center">
                     <div>
                         <img src="./images/fare.png" alt="" class="">
                     </div>
@@ -243,7 +243,7 @@
             </section>
 
             <!-- Select your seat section -->
-            <section class="container mx-auto mt-7 bg-white rounded-2xl flex divide-x-2 divide-dashed">
+            <section class="container mx-auto mt-7 bg-white rounded-2xl flex flex-col lg:flex-row divide-x-2 divide-dashed">
                 <div class="conainer mx-auto p-8 flex-1">
                     <div>
                         <h1 class="text-2xl font-semibold font-raleway">Select Your Seat</h1>
@@ -251,11 +251,11 @@
                     <hr class="border-dashed mt-6">
                     <div class="flex justify-between mt-6">
                         <div class="flex gap-2">
-                            <img src="./images/seat-gray.png" alt="" class="border-2 border-dashed">
+                            <img src="./images/seat-gray.png" alt="">
                             <h3 class="text-lg font-medium">Available</h3>
                         </div>
                         <div class="flex gap-2">
-                            <img src="./images/seat-green-filled.png" alt="" class="border-2 border-dashed">
+                            <img src="./images/seat-green-filled.png" alt="">
                             <h3 class="text-lg font-medium font-raleway text-green-500">Selected</h3>
                         </div>
                     </div>
@@ -424,7 +424,7 @@
                             <h1 class="font-inter font-medium">BDT <span id="total-ticket-cost"
                                     class="font-inter font-medium">0</span></h1>
                         </div>
-                        <div id="coupon-div" class="input input-bordered flex items-center gap-2 h-16 mt-6">
+                        <div id="coupon-div" class="input input-bordered flex items-center lg:gap-2 h-16 mt-6 ">
                             <input id="coupon-code" type="text" class="grow" placeholder="Have any copupon?" />
                             <div onclick="checkCouponCode()" id="btn-apply"
                                 class="btn bg-green-500 text-white font-inter font-medium">
@@ -471,10 +471,10 @@
     </main>
 
     <footer class="bg-black text-white flex flex-col">
-        <div class="flex justify-between container mx-auto pt-32">
+        <div class="flex flex-col lg:flex-row items-center lg:justify-between container mx-auto pt-32">
             <div class="space-y-4">
                 <h1 class="text-4xl font-raleway font-extrabold">GreenLine Paribahan</h1>
-                <p class="text-lg font-inter text-gray-500 w-2/3">Ticekt-Solution is a digital platform to make your
+                <p class="text-lg  lg:text-start font-inter text-gray-500 w-2/3">Ticekt-Solution is a digital platform to make your
                     daily commuting better.</p>
             </div>
             <div class="space-y-4">
@@ -491,11 +491,11 @@
             </div>
         </div>
         <hr class="container mx-auto mt-12 border-dashed border-gray-500">
-        <div class="flex justify-between container mx-auto py-8 mb-32">
+        <div class="flex flex-col lg:flex-row justify-between container mx-auto py-8 mb-32">
             <div>
                 <p class="text-gray-500">@All rights reserved, Ticket-Solution services limited.2024</p>
             </div>
-            <div class="font-inter font-medium flex gap-8">
+            <div class="font-inter font-medium flex flex-col lg:flex-row gap-8">
                 <p>Terms & condition</p>
                 <p>Return & refund policy</p>
                 <p>Privacy policy</p>
