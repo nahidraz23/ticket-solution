@@ -1,93 +1,92 @@
-const availableSeats = document.querySelectorAll('.available')
+const availableSeats = document.querySelectorAll('.available');
 
-const addTicket1 = document.getElementById('ticketNo1')
-const addTicket2 = document.getElementById('ticketNo2')
-const addTicket3 = document.getElementById('ticketNo3')
+const addTicket1 = document.getElementById('ticketNo1');
+const addTicket2 = document.getElementById('ticketNo2');
+const addTicket3 = document.getElementById('ticketNo3');
 
-const addTicket4 = document.getElementById('ticketNo4')
-const addTicket5 = document.getElementById('ticketNo5')
-const addTicket6 = document.getElementById('ticketNo6')
+const addTicket4 = document.getElementById('ticketNo4');
+const addTicket5 = document.getElementById('ticketNo5');
+const addTicket6 = document.getElementById('ticketNo6');
 
-const addTicket7 = document.getElementById('ticketNo7')
-const addTicket8 = document.getElementById('ticketNo8')
-const addTicket9 = document.getElementById('ticketNo9')
+const addTicket7 = document.getElementById('ticketNo7');
+const addTicket8 = document.getElementById('ticketNo8');
+const addTicket9 = document.getElementById('ticketNo9');
 
-const addTicket10 = document.getElementById('ticketNo10')
-const addTicket11 = document.getElementById('ticketNo11')
-const addTicket12 = document.getElementById('ticketNo12')
+const addTicket10 = document.getElementById('ticketNo10');
+const addTicket11 = document.getElementById('ticketNo11');
+const addTicket12 = document.getElementById('ticketNo12');
 
-const getTotalTicketCostId = document.getElementById('total-ticket-cost')
+const getTotalTicketCostId = document.getElementById('total-ticket-cost');
 
 let totalTicketCost = parseInt(
   document.getElementById('total-ticket-cost').innerText
-)
+);
 
-const getGrandTotaCostlId = document.getElementById('grand-total')
-// console.log(getGrandTotaCostlId)
+const getGrandTotaCostlId = document.getElementById('grand-total');
 
-let grandTotalCost = parseInt(document.getElementById('grand-total').innerText)
+let grandTotalCost = parseInt(document.getElementById('grand-total').innerText);
 
-const getCouponCode = document.getElementById('coupon-code')
+const getCouponCode = document.getElementById('coupon-code');
 
-const getApplyBtnId = document.getElementById('btn-apply')
-// console.log(getApplyBtnId)
+const getApplyBtnId = document.getElementById('btn-apply');
 
-let seatAvailable = 40
-let seatSelected = 0
-const seatClass = 'Economy'
-const seatFare = 550
+const couponDiv = document.getElementById('coupon-div');
+
+let seatAvailable = 40;
+let seatSelected = 0;
+const seatClass = 'Economy';
+const seatFare = 550;
 
 for (const seat of availableSeats) {
   seat.addEventListener('click', function (event) {
     if (seatSelected < 4) {
-      seatSelected = seatSelected + 1
+      seatSelected = seatSelected + 1;
 
-      let seatNo = seat.innerText
+      let seatNo = seat.innerText;
 
       if (seatSelected == 1) {
-        addTicket1.innerText = seatNo
-        addTicket2.innerText = seatClass
-        addTicket3.innerText = seatFare
+        addTicket1.innerText = seatNo;
+        addTicket2.innerText = seatClass;
+        addTicket3.innerText = seatFare;
       } else if (seatSelected == 2) {
-        addTicket4.innerText = seatNo
-        addTicket5.innerText = seatClass
-        addTicket6.innerText = seatFare
+        addTicket4.innerText = seatNo;
+        addTicket5.innerText = seatClass;
+        addTicket6.innerText = seatFare;
       } else if (seatSelected == 3) {
-        addTicket7.innerText = seatNo
-        addTicket8.innerText = seatClass
-        addTicket9.innerText = seatFare
+        addTicket7.innerText = seatNo;
+        addTicket8.innerText = seatClass;
+        addTicket9.innerText = seatFare;
       } else if (seatSelected == 4) {
-        addTicket10.innerText = seatNo
-        addTicket11.innerText = seatClass
-        addTicket12.innerText = seatFare
+        addTicket10.innerText = seatNo;
+        addTicket11.innerText = seatClass;
+        addTicket12.innerText = seatFare;
       }
 
-      totalTicketCost = seatSelected * seatFare
+      totalTicketCost = seatSelected * seatFare;
 
-      getTotalTicketCostId.innerText = totalTicketCost
+      getTotalTicketCostId.innerText = totalTicketCost;
 
-      getGrandTotaCostlId.innerText = totalTicketCost
+      getGrandTotaCostlId.innerText = totalTicketCost;
 
-      grandTotalCost = totalTicketCost
+      grandTotalCost = totalTicketCost;
 
-      seat.disabled = true
+      seat.disabled = true;
       if (seat.disabled === true) {
-        seat.style.backgroundColor = '#32CD32'
-        seat.style.color = '#fff'
+        seat.style.backgroundColor = '#32CD32';
+        seat.style.color = '#fff';
       }
     } else {
-      alert('You can not select more than 4 seats at a time')
+      alert('You can not select more than 4 seats at a time');
     }
-    const getTakenSeat = document.getElementById('seat-selected')
-    let takenSeat = seatSelected
-    getTakenSeat.innerText = takenSeat
+    const getTakenSeat = document.getElementById('seat-selected');
+    let takenSeat = seatSelected;
+    getTakenSeat.innerText = takenSeat;
 
-    const getAvailableSeat = document.getElementById('available-seats')
-    let seatLeft = seatAvailable - takenSeat
-    getAvailableSeat.innerText = seatLeft
+    const getAvailableSeat = document.getElementById('available-seats');
+    let seatLeft = seatAvailable - takenSeat;
+    getAvailableSeat.innerText = seatLeft;
   })
 }
-
 
 // coupon code
 let discount = 0;
@@ -97,10 +96,13 @@ function checkCouponCode () {
     discount = parseInt(grandTotalCost * 0.15);
     grandTotalCost = grandTotalCost - discount;
     getGrandTotaCostlId.innerText = grandTotalCost;
+    couponDiv.classList.add("hidden")
+
   } else if (getCouponCode.value === 'Couple 20') {
     discount = parseInt(grandTotalCost * 0.2);
     grandTotalCost = grandTotalCost - discount;
     getGrandTotaCostlId.innerText = grandTotalCost;
+    couponDiv.classList.add("hidden")
   } else {
     alert('Please provide correct coupon code');
   }
