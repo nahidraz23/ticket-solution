@@ -424,14 +424,14 @@
                             <h1 class="font-inter font-medium">BDT <span id="total-ticket-cost" class="font-inter font-medium">0</span></h1>
                         </div>
                         <div class="input input-bordered flex items-center gap-2 h-16 mt-6">
-                            <input type="text" class="grow" placeholder="Have any copupon?" />
-                            <div class="btn bg-green-500 text-white font-inter font-medium">
-                                <h1>Apply</h1>
+                            <input id="coupon-code" type="text" class="grow" placeholder="Have any copupon?" />
+                            <div onclick="checkCouponCode()" id="btn-apply" class="btn bg-green-500 text-white font-inter font-medium">
+                                Apply
                             </div>
                         </div>
                         <div class="flex justify-between font-inter mt-6">
                             <h1 class="font-inter font-medium">Grand Total</h1>
-                            <h1 class="font-inter font-medium">BDT <span class="font-inter font-medium">0</span></h1>
+                            <h1 class="font-inter font-medium">BDT <span id="grand-total" class="font-inter font-medium">0</span></h1>
                         </div>
                     </div>
                     <div class="space-y-4 mt-6">

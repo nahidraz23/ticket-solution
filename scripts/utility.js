@@ -1,12 +1,5 @@
 const availableSeats = document.querySelectorAll('.available')
 
-const customerPicked = document.getElementById('customer-picked')
-
-const ticket1 = document.getElementById('ticket-1')
-const ticket2 = document.getElementById('ticket-2')
-const ticket3 = document.getElementById('ticket-3')
-const ticket4 = document.getElementById('ticket-4')
-
 const addTicket1 = document.getElementById('ticketNo1')
 const addTicket2 = document.getElementById('ticketNo2')
 const addTicket3 = document.getElementById('ticketNo3')
@@ -23,21 +16,33 @@ const addTicket10 = document.getElementById('ticketNo10')
 const addTicket11 = document.getElementById('ticketNo11')
 const addTicket12 = document.getElementById('ticketNo12')
 
-const getTotalTicketCostId = document.getElementById('total-ticket-cost');
+const getTotalTicketCostId = document.getElementById('total-ticket-cost')
 
-let totalTicketCost = parseInt(document.getElementById('total-ticket-cost').innerText);
+let totalTicketCost = parseInt(
+  document.getElementById('total-ticket-cost').innerText
+)
+
+const getGrandTotaCostlId = document.getElementById('grand-total')
+// console.log(getGrandTotaCostlId)
+
+let grandTotalCost = parseInt(document.getElementById('grand-total').innerText)
+
+const getCouponCode = document.getElementById('coupon-code')
+
+const getApplyBtnId = document.getElementById('btn-apply')
+// console.log(getApplyBtnId)
 
 let seatAvailable = 40
 let seatSelected = 0
+const seatClass = 'Economy'
+const seatFare = 550
 
 for (const seat of availableSeats) {
   seat.addEventListener('click', function (event) {
     if (seatSelected < 4) {
-      seatSelected = seatSelected + 1;
+      seatSelected = seatSelected + 1
 
-      let seatNo = seat.innerText;
-      const seatClass = 'Economy';
-      const seatFare = 550;
+      let seatNo = seat.innerText
 
       if (seatSelected == 1) {
         addTicket1.innerText = seatNo
@@ -57,20 +62,21 @@ for (const seat of availableSeats) {
         addTicket12.innerText = seatFare
       }
 
-      totalTicketCost = seatSelected * seatFare;
+      totalTicketCost = seatSelected * seatFare
 
-      getTotalTicketCostId.innerText = totalTicketCost;
-      console.log(totalTicketCost)
+      getTotalTicketCostId.innerText = totalTicketCost
+
+      getGrandTotaCostlId.innerText = totalTicketCost
+
+      grandTotalCost = totalTicketCost
 
       seat.disabled = true
       if (seat.disabled === true) {
         seat.style.backgroundColor = '#32CD32'
         seat.style.color = '#fff'
       }
-      
-    }
-    else{
-        alert('You can not select more than 4 seats at a time');
+    } else {
+      alert('You can not select more than 4 seats at a time')
     }
     const getTakenSeat = document.getElementById('seat-selected')
     let takenSeat = seatSelected
@@ -80,4 +86,22 @@ for (const seat of availableSeats) {
     let seatLeft = seatAvailable - takenSeat
     getAvailableSeat.innerText = seatLeft
   })
+}
+
+
+// coupon code
+let discount = 0;
+
+function checkCouponCode () {
+  if (getCouponCode.value === 'NEW15') {
+    discount = parseInt(grandTotalCost * 0.15);
+    grandTotalCost = grandTotalCost - discount;
+    getGrandTotaCostlId.innerText = grandTotalCost;
+  } else if (getCouponCode.value === 'Couple 20') {
+    discount = parseInt(grandTotalCost * 0.2);
+    grandTotalCost = grandTotalCost - discount;
+    getGrandTotaCostlId.innerText = grandTotalCost;
+  } else {
+    alert('Please provide correct coupon code');
+  }
 }
