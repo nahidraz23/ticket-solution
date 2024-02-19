@@ -107,3 +107,13 @@ function checkCouponCode () {
     alert('Please provide correct coupon code');
   }
 }
+
+// const nextButton = document.getElementById('btn-next');
+// console.log(nextButton)
+
+// const phoneNo = document.getElementById('phone-no');
+// console.log(phoneNo)
+
+// if(phoneNo.value.length === 0){
+//     nextButton.disabled = true;
+// }
